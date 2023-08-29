@@ -1,0 +1,21 @@
+<h1>DBZ Personajes</h1>
+<hr>
+
+<div class="row">
+
+  <div class="col">
+    <!--
+      El characterList lo agarra de la carpeta de list del componente list.component.ts que es el hijo, y lo esta mandando por un arreglo. y seria igual a la variable en donde esta el padre que es main-page.component.ts que es el de characters.
+
+      *- El de <dbz-list></dbz-list> Es el componente.
+    -->
+  <!-- Este es un servicio en donde esta mandando a traer todo -->
+    <dbz-list [characterList]="characters"
+              (onDelete)="onDeleteCharacter($event)"></dbz-list>
+  </div>
+
+  <div class="col">
+    <dbz-add-character (orNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+  </div>
+
+</div>

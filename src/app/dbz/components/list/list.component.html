@@ -1,0 +1,42 @@
+<!--
+      let character of characterList; -> Lo que hace es que recorre cada lista de los personajes.
+      let i = index; -> Lo que hace es enumerar.
+      let isFirst = first; -> Solo trae lo primero.
+      let isLast = last; -> Solo trae lo ultimo.
+      let isEven = even; -> Solo son impar.
+      62 capitulo
+-->
+<h4>Listado</h4>
+    <ul class="list-group ">
+        <li
+
+        *ngFor="
+                  let character of characterList;
+                  let i = index;
+                  let isFirst = first;
+                  let isLast = last;
+                  let isEven = even;
+                "
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                  [ngClass]="{
+                    'list-group-item-dark' : isLast,
+                    'list-group-item-primary': isEven
+                  }">
+
+                  <div>
+                    <span class="text-primary">{{i + 1}}.</span>
+                    <span>
+                      {{ character.nombre }} -
+                    </span>
+                    <strong>
+                      Poder: {{ character.poder }}
+                    </strong>
+                  </div>
+                  <button class="btn btn-danger" (click)="onDeletedCharacter(character.id)">X</button>
+
+
+          <!-- <span>Si es el primer numero: {{ isFirst }}</span>
+          <span> Si es el ultimo numero: {{ isLast }}</span> -->
+
+        </li>
+    </ul>

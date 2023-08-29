@@ -1,0 +1,28 @@
+<!--
+* Para agregar los componentes sera en la carpeta de components y en Angular: Generate a component
+* Los componentes son pequeña información que se puede agregar en el html es como el hijo y el padre seria main-page-component.
+-->
+<h4>Agragación de personaje</h4>
+<form class="row" (ngSubmit)="addCharacter()">
+  <input
+          [(ngModel)]="character.nombre"
+          type="text"
+          name="nombre"
+          placeholder="Nombre"
+          class="form-control mb-2"
+  >
+
+  <input
+          [(ngModel)]="character.poder"
+          type="number"
+          name="poder"
+          placeholder="Poder"
+          class="form-control mb-2"
+  >
+
+  <button type="submit" class="btn btn-primary" >
+    Agregar
+  </button>
+
+  <!-- <pre>{{character | json}}</pre> -->
+</form>
